@@ -13,7 +13,7 @@ const Hero = styled.div<{ $bg: string; $color: string; $image: string; $disabled
   min-height: 320px;
   padding: 2rem;
   box-sizing: border-box;
-  background-image: url('${(p) => p.$image}');
+  background-image: url(${(p) => JSON.stringify(p.$image)});
   background-size: cover;
   background-position: center;
   ${(p) =>
@@ -55,7 +55,7 @@ export const HeroImage: React.FC<HeroImageProps> = ({
     data-testid="hero-image"
     $bg={backgroundColor}
     $color={textColor}
-    $image={imageUrl}
+    $image={imageUrl && imageUrl.trim() ? imageUrl.trim() : placeholderImage}
     $disabled={disabled}
     aria-disabled={disabled}
     {...rest}

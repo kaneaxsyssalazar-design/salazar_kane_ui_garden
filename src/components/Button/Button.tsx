@@ -15,6 +15,19 @@ const StyledButton = styled.button<{ $bg: string; $color: string; $disabled: boo
           background-color: ${p.$bg};
           color: ${p.$color};
           cursor: pointer;
+          transition: transform 0.05s, filter 0.15s, box-shadow 0.15s;
+          &:hover {
+            filter: brightness(1.1);
+          }
+          &:active {
+            transform: scale(0.95);
+            filter: brightness(0.8);
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.35);
+          }
+          &:focus-visible {
+            outline: 3px solid #ffb300;
+            outline-offset: 2px;
+          }
         `}
   @media (max-width: ${breakpoints.mobile}) {
     width: 100%;

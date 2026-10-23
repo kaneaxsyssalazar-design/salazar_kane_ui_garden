@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { ImgProps } from './Img.types';
 import { colors, disabledCss, placeholderImage } from '../../theme';
@@ -20,21 +20,29 @@ const StyledImg = styled.img<{ $bg: string; $disabled: boolean }>`
 `;
 
 export const Img: React.FC<ImgProps> = ({
-  src = placeholderImage,
+  src,
   alt = 'Placeholder image',
   backgroundColor = colors.light,
   disabled = false,
   ...rest
-}) => (
-  <StyledImg
-    data-testid="img"
-    src={src}
-    alt={alt}
-    $bg={backgroundColor}
-    $disabled={disabled}
-    aria-disabled={disabled}
-    {...rest}
-  />
-);
+}) => {
+  const [failed, setFailed] = useState(false);
+  useEffect(() => setFailed(false), [src]);
+  const finalSrc = !src || failed ? placeholderImage : src.trim();
+
+  return (
+    <StyledImg
+      data-testid="img"
+      src={finalSrc}
+      alt={alt}
+      referrerPolicy="no-referrer"
+      onError={() => setFailed(true)}
+      $bg={backgroundColor}
+      $disabled={disabled}
+      aria-disabled={disabled}
+      {...rest}
+    />
+  );
+};
 
 export default Img;

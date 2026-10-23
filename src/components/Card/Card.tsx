@@ -55,7 +55,7 @@ export const Card: React.FC<CardProps> = ({
     aria-disabled={disabled}
     {...rest}
   >
-    {imageSrc && <img src={imageSrc} alt={title} />}
+    {imageSrc && <img src={imageSrc.trim()} alt={title} referrerPolicy="no-referrer" />}
     <div className="card-body">
       <h3>{title}</h3>
       <p>{children ?? content}</p>
