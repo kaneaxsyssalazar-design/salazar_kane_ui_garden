@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "ui_garden",
   "version": "1.0.0",
   "private": true,
@@ -36,51 +35,12 @@
     "test:ci": "CI=true react-scripts test --watchAll=false --testMatch \"**/src/**/*.tests.tsx\"",
     "storybook": "storybook dev -p 8083 --ci",
     "build-storybook": "storybook build"
-=======
-  "name": "salazar_kane_ui_garden",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/dom": "^10.4.2",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/styled-components": "^5.1.36",
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1",
-    "react-scripts": "5.0.1",
-    "styled-components": "^6.6.0",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
->>>>>>> 7f81c8321f9514276bfa6f24c17329bd97a33098
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": ["react-app", "react-app/jest"]
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-<<<<<<< HEAD
-=======
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^7.0.1",
-    "@testing-library/react": "^16.3.3",
-    "jest-styled-components": "^7.4.0"
->>>>>>> 7f81c8321f9514276bfa6f24c17329bd97a33098
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   }
 }
